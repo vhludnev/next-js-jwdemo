@@ -20,18 +20,16 @@
 - Dark / Light mode toggle
 - Responsive design
 
+<br/>
+
+## _Previews_
+
+| Main screen                                                                                                                   | Dark Mode                                                                                                                   | Page                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://github.com/vhludnev/next-js-jwdemo/blob/main/public/assets/previews/1.png" width="200" alt="main screen" /> | <img src="https://github.com/vhludnev/next-js-jwdemo/blob/main/public/assets/previews/2.png" width="200" alt="dark mode" /> | <img src="https://github.com/vhludnev/next-js-jwdemo/blob/main/public/assets/previews/3.png" width="200" alt="page 2" /> |
+
 <br/><br/>
 
-## Installation
-
-The app requires [Node.js](https://nodejs.org/) v18+ to run smoothly.
-
-Clone repo and install all dependencies first. _Example:_
-
-```sh
-git clone https://github.com/vhludnev//jw-nextjs.git
-npm i
-add .env file to the head directory and add your secret data
-npm run dev
-
-```
+| Page                                                                                                                     | Page                                                                                                                     | Page                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://github.com/vhludnev/next-js-jwdemo/blob/main/public/assets/previews/4.png" width="200" alt="page 3" /> | <img src="https://github.com/vhludnev/next-js-jwdemo/blob/main/public/assets/previews/5.png" width="200" alt="page 4" /> | <img src="https://github.com/vhludnev/next-js-jwdemo/blob/main/public/assets/previews/6.png" width="200" alt="page 5" /> |
