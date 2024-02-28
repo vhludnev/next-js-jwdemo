@@ -27,8 +27,7 @@ const ConfirmPopup = ({
   closeOnDocumentClick = true,
   button,
   lang = "ru",
-}: //children,
-Props) => {
+}: Props) => {
   const handleClose = (close: any) => {
     close();
     lockScroll && document.body.style.overflow === "unset";

@@ -4,7 +4,6 @@ import type { ComponentProps, ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  //[x: string]: any;
 } & ComponentProps<typeof Popup>;
 
 export default function PopupWrapper({ children, ...otherProps }: Props) {

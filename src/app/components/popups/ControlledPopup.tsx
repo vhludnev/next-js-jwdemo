@@ -138,14 +138,6 @@ const ControlledPopup = ({
 
             <div style={{ display: "flex", gap: "4px" }}>
               {id && (
-                // <button
-                //   className='button danger'
-                //   onClick={() => {
-                //     handleDelete(id)
-                //   }}
-                // >
-                //   Удалить
-                // </button>
                 <ConfirmPopup
                   handleConfirm={() => handleDelete(id)}
                   text="Вы уверены, что хотели бы удалить?"
