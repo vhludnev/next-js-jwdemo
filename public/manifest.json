@@ -1,0 +1,81 @@
+{
+  "version": "2.2.5",
+  "theme_color": "#f5f3f0",
+  "background_color": "#f5f3f0",
+  "display": "standalone",
+  "scope": "/",
+  "id": "/",
+  "start_url": "/",
+  "name": "JW Centrs",
+  "short_name": "JW Centrs",
+  "description": "JW Centrs",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/icons/logo32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/logo50.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/196x196.jpg",
+      "sizes": "196x196",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/512x512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "ios/120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "ios/152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "ios/167.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "ios/180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "JW Centrs | Стенды",
+      "short_name": "Стенды",
+      "url": "/stand",
+      "icons": [
+        {
+          "src": "/96x96-stand.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    }
+  ]
+}

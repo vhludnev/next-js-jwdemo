@@ -36,7 +36,6 @@ const generateAppDirEntry = (entry) => {
 };
 
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
   experimental: {
     webpackBuildWorker: true,
@@ -47,10 +46,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
-      },
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
       },
     ],
   },

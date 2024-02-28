@@ -1,24 +1,28 @@
-## Users portal built on Next js, Mongo DB and Cloudinary
+## Users portal built on Next js, Typescript, Mongo DB and Cloudinary
 
 - React (v.18)
+- Typescript (v.5)
 - Next js (v.14)
-- Next Pwa (implemented Progressive Web Application functionality)
+- Next PWA (implemented Progressive Web Application functionality)
 - Tailwind CSS
 - Next auth (credentials and Google)
 - Bcrypt js
 - Nodemailer
 - Mongo DB (Mongoose)
-- Cloudinary
-- React Query
-- React Big Calendar (Interaction with Calendar)
-- React Pdf Viewer
-- React Zoom Pan Pinch (Interaction with images)
-- React Toastify
-- React Tooltip
 - Reactjs Popup
-- Xlsx (Excel file generation)
+- React Big Calendar (Interaction with Calendar)
+- React Toastify
 - Dark / Light mode toggle
 - Responsive design
+
+More in full version:
+
+- React Pdf Viewer
+- React Zoom Pan Pinch (Interaction with images)
+- Cloudinary
+- React Query
+- React Tooltip
+- Xlsx (Excel file generation)
 
 <br/>
 
