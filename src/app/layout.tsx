@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     type: "website",
   },
   manifest: "/manifest.json",
-  //themeColor: '#f5f3f0',
 };
 
 export const viewport = {
@@ -49,6 +48,7 @@ export default function RootLayout({
               <NavWrapper />
               {children}
             </main>
+            <div id="modal-container"></div>
           </ThemeProvider>
         </Provider>
       </body>

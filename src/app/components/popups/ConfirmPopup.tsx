@@ -1,18 +1,19 @@
-import PopupWrapper from "./PopupWrapper";
+import { TRoundedSize } from "@/types/modal";
+import Modal from "./Modal";
 import { PiWarningBold } from "@/lib/icons";
+import { cc, rounded } from "@/utils";
 
 type Props = {
   btnClass?: string;
   text: string;
   warning?: string;
   handleConfirm: () => void;
-  top: string;
-  closeHeaderBtn?: boolean;
   nested?: boolean;
   lockScroll?: boolean;
   closeOnDocumentClick?: boolean;
   button: React.ReactElement;
   lang?: string;
+  roundedSize?: TRoundedSize;
 };
 
 const ConfirmPopup = ({
@@ -20,57 +21,57 @@ const ConfirmPopup = ({
   text,
   warning,
   handleConfirm = () => {},
-  top = "-top-[165px]",
-  closeHeaderBtn = false,
   nested = false,
-  lockScroll = false,
-  closeOnDocumentClick = true,
+  lockScroll,
+  closeOnDocumentClick,
   button,
   lang = "ru",
+  roundedSize = "lg",
 }: Props) => {
-  const handleClose = (close: any) => {
-    close();
-    lockScroll && document.body.style.overflow === "unset";
-  };
   return (
-    <PopupWrapper
+    <Modal
       trigger={button}
-      nested={nested}
-      modal
+      className={`${nested ? "w-[320px]" : "w-[344px]"} drop-shadow-xl`}
       lockScroll={lockScroll}
       closeOnDocumentClick={closeOnDocumentClick}
+      hasCloseBtn={false}
+      roundedSize={roundedSize}
     >
       {
         ((close: any) => (
-          <div
-            className={`modal ${
-              nested ? "w-[320px] -ml-[160px]" : "w-[344px] -ml-[172px]"
-            } ${top} rounded-lg border-2 border-gray-300 drop-shadow-xl`}
-          >
-            {closeHeaderBtn && (
-              <button
-                className="close top-3 right-3"
-                onClick={() => handleClose(close)}
-              >
-                &times;
-              </button>
-            )}
-            <div className="header bg-white h-12 dark:bg-[#454b4d]"></div>
+          <>
+            <div
+              className={cc(
+                "header",
+                rounded("t", roundedSize),
+                "bg-white h-12 dark:bg-[#454b4d]"
+              )}
+            ></div>
             <div className="content pt-0 pb-2 px-6 flex flex-col gap-3.5">
               <span className={`text-base ${warning ? "px-5" : "text-center"}`}>
                 {text}
               </span>
               {warning && (
-                <span className="flex gap-2">
-                  <PiWarningBold color="orangered" size={24} />
-                  <b className="text-base self-end">{warning}</b>
+                <span className="flex gap-4 items-center">
+                  <PiWarningBold
+                    className="min-w-[24px]"
+                    color="orangered"
+                    size={24}
+                  />
+                  <b className="text-base self-end tracking-tight">{warning}</b>
                 </span>
               )}
             </div>
-            <div className="actions bg-white dark:bg-[#454b4d]">
+            <div
+              className={cc(
+                "actions",
+                rounded("b", roundedSize),
+                "bg-white dark:bg-[#454b4d]"
+              )}
+            >
               <button
                 className="button w-20 border-[#6992ca] text-[#6992ca] dark:border-blue-300 dark:text-blue-300 dark:hover:text-white hover:text-white hover:bg-[#6992ca] transition ease-in-out duration-250"
-                onClick={() => handleClose(close)}
+                onClick={close}
               >
                 {lang === "lv" ? "Atcelt" : "Отменить"}
               </button>
@@ -78,16 +79,16 @@ const ConfirmPopup = ({
                 className={`button min-w-16 ${btnClass} transition ease-in-out duration-250`}
                 onClick={() => {
                   handleConfirm();
-                  handleClose(close);
+                  close();
                 }}
               >
                 {lang === "lv" ? "Apstiprināt" : "Подтвердить"}
               </button>
             </div>
-          </div>
+          </>
         )) as unknown as React.ReactNode
       }
-    </PopupWrapper>
+    </Modal>
   );
 };
 

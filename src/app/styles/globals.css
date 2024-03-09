@@ -15,7 +15,8 @@
 }
 
 html {
-  margin-left: calc(100vw - 100%);
+  scrollbar-width: thin;
+  width: 100vw;
 }
 
 a {

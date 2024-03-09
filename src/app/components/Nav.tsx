@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef, SyntheticEvent } from "react";
+import { useState, useEffect, useRef } from "react";
 import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { FcKey, VscSignOut, BiMenu, TbTrolley, TbUsers } from "@/lib/icons";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { permissionClient } from "@/utils";
+import { cc, permissionClient } from "@/utils";
 import ProfilePopup from "./popups/ProfilePopup";
 import { Session } from "next-auth";
 
@@ -59,7 +59,7 @@ const Nav = ({ session }: Props) => {
       </div>
 
       <div className="-mr-2 md:mr-0">
-        <div className={`flex relative ${toggleDropdown ? "active" : ""}`}>
+        <div className={cc("flex relative", toggleDropdown && "active")}>
           <div
             ref={burgerRef}
             className={`z-50 rounded-full p-1.5 bg-primary-white transition-all duration-300 ease-in-out ${
@@ -93,8 +93,8 @@ const Nav = ({ session }: Props) => {
                 <div className="item animation-delay-200 -mt-2 text-sm font-inter font-medium text-gray-700 dark:text-gray-300">
                   {session.user?.name?.split(" ")[0] || "Возвещатель"}
                 </div>
-                <div className="item animation-delay-200">
-                  <ProfilePopup data={session.user} />
+                <div className="item animation-delay-200" onClick={closeNavBar}>
+                  <ProfilePopup data={session.user} roundedSize="lg" />
                 </div>
               </>
             )}

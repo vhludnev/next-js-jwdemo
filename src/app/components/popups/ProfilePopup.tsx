@@ -1,14 +1,23 @@
 import Image from "next/image";
 import { BsFillPersonFill } from "@/lib/icons";
 import moment from "moment";
-import PopupWrapper from "./PopupWrapper";
+import type { TUser } from "@/types/user";
+import Modal from "./Modal";
+import type { TRoundedSize } from "@/types/modal";
+import { cc, rounded } from "@/utils";
 import "moment/locale/ru";
-import { TUser } from "@/types/user";
+
 moment.locale("ru");
 
-const ProfilePopup = ({ data }: { data: TUser }) => {
+const ProfilePopup = ({
+  data,
+  roundedSize,
+}: {
+  data: TUser;
+  roundedSize?: TRoundedSize;
+}) => {
   return (
-    <PopupWrapper
+    <Modal
       closeOnDocumentClick={false}
       trigger={
         <div className="cursor-pointer">
@@ -25,16 +34,25 @@ const ProfilePopup = ({ data }: { data: TUser }) => {
           )}
         </div>
       }
-      modal
+      roundedSize={roundedSize}
     >
       {
-        ((close: any) => (
-          <div className="modal w-[350px] md:w-auto -ml-[175px] -top-[165px] rounded-xl border border-gray-300 drop-shadow-lg">
-            <button className="close" onClick={close}>
-              &times;
-            </button>
-            <div className="header bg-primary-white h-14 dark:bg-[#454b4d]"></div>
-            <div className="content px-0 md:px-2 py-2 bg-primary-white dark:bg-[#454b4d] -mt-0.5">
+        (() => (
+          <>
+            <div
+              className={cc(
+                "header",
+                rounded("t", roundedSize),
+                "bg-primary-white h-14 dark:bg-[#454b4d]"
+              )}
+            ></div>
+            <div
+              className={cc(
+                "content",
+                rounded("b", roundedSize),
+                "px-0 md:px-2 py-2 bg-primary-white dark:bg-[#454b4d] -mt-0.5"
+              )}
+            >
               <div className="text-base relative px-2 pb-7 overflow-x-hidden max-h-[300px] md:max-h-[50vh] w-[350px] flex flex-col items-center gap-2">
                 <div className="pb-6">
                   {data?.image ? (
@@ -57,10 +75,10 @@ const ProfilePopup = ({ data }: { data: TUser }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </>
         )) as unknown as React.ReactNode
       }
-    </PopupWrapper>
+    </Modal>
   );
 };
 

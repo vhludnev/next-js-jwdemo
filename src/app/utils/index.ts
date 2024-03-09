@@ -4,6 +4,7 @@ import "moment/locale/ru";
 import "moment/locale/lv";
 import { TAccess, TUser } from "@/types/user";
 import { TEvent } from "@/types/event";
+import type { TRoundedSize } from "@/types/modal";
 moment.locale("ru");
 
 export const backgroundColor = (title: string) => {
@@ -131,5 +132,29 @@ export const userMessage = (
       return response === "success" ? "Доступ изменён успешно!" : response;
     default:
       return "";
+  }
+};
+
+export const cc = (...classes: unknown[]) => {
+  return classes.filter((c) => typeof c === "string").join(" ");
+};
+
+export const rounded = (
+  loc: "all" | "t" | "b" = "all",
+  size: TRoundedSize = "default"
+) => {
+  const r = "rounded";
+
+  if (loc == "all") {
+    if (size == "default") {
+      return "rounded";
+    } else {
+      return `${r}-${size}`;
+    }
+  } else {
+    if (size == "default") {
+      return `${r}-${loc}`;
+    }
+    return `${r}-${loc}-${size}`;
   }
 };
